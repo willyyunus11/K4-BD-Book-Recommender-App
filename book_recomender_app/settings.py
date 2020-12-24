@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'book_recommendation'
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,14 @@ WSGI_APPLICATION = 'book_recomender_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        "CLIENT": {
+            "name": 'k1_bd_db',
+            "host": 'mongodb+srv://m001-student:m001-student@k1-bd.dauw7.mongodb.net/k1_bd_db?retryWrites=true&w=majority',
+            "username": 'm001-student',
+            "password": 'm001-student',
+            "authMechanism": "SCRAM-SHA-1",
+        }, 
     }
 }
 
